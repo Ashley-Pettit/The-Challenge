@@ -43,6 +43,7 @@ app.player1Score = 0;
 app.player2Score = 0;
 app.isRoundInProgress = true;
 app.gameOptionsAlreadyclicked = false;
+app.challengeScore = 0;
 app.startingPlayer = null;
 app.currentPlayer = null;
 app.hasBlocked = null;
@@ -71,14 +72,8 @@ function countdownAnimation() {
 }
 
 function setupScoreBoard() {
-  if (difficulty === "human") {
-      $('#title_score1').text("Player 1 Score");
-      $('#title_score2').text("Player 2 Score");
-  }
-  else {
       $('#title_score1').text("Computer Score");
-      $('#title_score2').text("Player Score");
-  }
+      $('#title_score2').text("Player Score" app.challengeScore);
 }
 
 function setUpBoard() {
@@ -107,16 +102,7 @@ function whoStarts() {
           app.startingPlayer = "The Human";
           app.currentPlayer = 'O';
       }
-  } else {
-      if (randomPlayer === 1) {
-          app.startingPlayer = "Player 1";
-          app.currentPlayer = 'X';
-      } else {
-          app.startingPlayer = "Player 2";
-          app.currentPlayer = 'O';
-      }
   }
-}
 
 function changePlayer() {
   if (app.currentPlayer === 'X') {
