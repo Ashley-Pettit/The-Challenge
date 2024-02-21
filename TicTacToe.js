@@ -481,8 +481,8 @@ function stealCell(playType) {
 function cheatingMoves() {
   app.currentPlayer = 'X'
   if (app.isRoundInProgress === true) {
-    if (feelLikeCheating(.99) {
-      if isComputerAbleToWin() {
+    if (feelLikeCheating(.99)) {
+      if (isComputerAbleToWin()) {
        app.turn++
        playToWin();
        console.log("Turn " + app.turn + ". The computer snuck victory with a dirty double play.");
